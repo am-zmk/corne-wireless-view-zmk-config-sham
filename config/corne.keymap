@@ -24,6 +24,13 @@
             bindings = <&kp LC(LG(LA(V)))>;
             label = "PASTEASTEXT";
         };
+
+        ss: ss {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp S>;
+            label = "SS";
+        };
     };
 
     behaviors {
@@ -38,7 +45,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SKEY_SCREENSHOT";
             #binding-cells = <0>;
-            bindings = <&kp S>, <&kp S>, <&screenshot>;
+            bindings = <&kp S>, <&ss>, <&screenshot>;
         };
 
         td_vKey_pastePlainText: td_vKey_pastePlainText {
