@@ -27,11 +27,25 @@
     };
 
     behaviors {
-        tOrSpecialLayer: tOrSpecialLayer {
+        td_tKey_special1Layer: td_tKey_special1Layer {
             compatible = "zmk,behavior-tap-dance";
-            label = "TORSPECIALLAYER";
+            label = "TD_TKEY_SPECIAL1LAYER";
             #binding-cells = <0>;
             bindings = <&kp T>, <&kp T>, <&tog 3>;
+        };
+
+        td_skey_screenshot: td_skey_screenshot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SKEY_SCREENSHOT";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&kp S>, <&screenshot>;
+        };
+
+        td_vKey_pastePlainText: td_vKey_pastePlainText {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_VKEY_PASTEPLAINTEXT";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp V>, <&pasteAsText>;
         };
     };
 
@@ -47,10 +61,10 @@
 
             display-name = "Base";
             bindings = <
-&mt LA(TAB) TAB   &kp Q  &kp W  &kp E     &kp R  &tOrSpecialLayer    &kp Y      &kp U  &kp I         &kp O    &kp P     &kp BSPC
-&kp LEFT_SHIFT    &kp A  &kp S  &kp D     &kp F  &kp G               &kp H      &kp J  &kp K         &kp L    &kp SEMI  &kp RIGHT_SHIFT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V  &kp B               &kp N      &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp SQT
-                                &kp LGUI  &mo 1  &kp RETURN          &kp SPACE  &mo 2  &kp LEFT_ALT
+&mt LA(TAB) TAB   &kp Q  &kp W                &kp E     &kp R                    &td_tKey_special1Layer    &kp Y      &kp U  &kp I         &kp O    &kp P     &kp BSPC
+&kp LEFT_SHIFT    &kp A  &td_skey_screenshot  &kp D     &kp F                    &kp G                     &kp H      &kp J  &kp K         &kp L    &kp SEMI  &kp RIGHT_SHIFT
+&kp LEFT_CONTROL  &kp Z  &kp X                &kp C     &td_vKey_pastePlainText  &kp B                     &kp N      &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp SQT
+                                              &kp LGUI  &mo 1                    &kp RETURN                &kp SPACE  &mo 2  &kp LEFT_ALT
             >;
         };
 
@@ -95,10 +109,10 @@
 
             display-name = "Special1";
             bindings = <
-&trans  &trans  &trans       &trans  &trans        &trans    &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
-&trans  &trans  &screenshot  &trans  &trans        &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans       &trans  &pasteAsText  &trans    &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
-                             &trans  &tog 3        &trans    &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
+                        &trans  &tog 3  &trans    &trans          &trans          &trans
             >;
         };
 
