@@ -71,8 +71,8 @@
             display-name = "Lower";
             bindings = <
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &td_setBT4x2_clearBTon3rd    &kp MINUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp ASTERISK  &kp DELETE
-&trans  &trans        &screenshot   &trans        &trans        &trans                       &kp PLUS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp NUMBER_0  &kp ESCAPE
-&trans  &trans        &trans        &trans        &pasteAsText  &trans                       &kp EQUAL  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SLASH     &kp UNDERSCORE
+&trans  &trans        &screenshot   &trans        &trans        &kp GRAVE                    &kp PLUS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp NUMBER_0  &kp NON_US_BACKSLASH
+&trans  &trans        &trans        &trans        &pasteAsText  &trans                       &kp EQUAL  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp UNDERSCORE
                                     &kp LGUI      &trans        &kp RETURN                   &kp SPACE  &trans           &kp LEFT_ALT
             >;
         };
@@ -102,13 +102,11 @@
 
             display-name = "Special1";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK       &mkp MCLK     &mkp RCLK        &trans  &trans
                         &trans  &tog 3  &trans    &trans          &trans          &trans
             >;
         };
-
-        extra_1 { status = "reserved"; };
     };
 };
